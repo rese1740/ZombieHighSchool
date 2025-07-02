@@ -5,8 +5,7 @@ using UnityEngine.UI;
 public class Movement2D : MonoBehaviour
 {
     [Header("Movement Settings")]
-    [SerializeField]
-	private	float	moveTime = 0.5f;								// 1칸 이동에 소요되는 시간
+    [SerializeField]  private float	moveTime = 0.5f;								
 	public	Vector3	MoveDirection	{ set; get; } = Vector3.zero;   // 이동 방향
     public Vector3 LookDirection { get; private set; } = Vector3.down;
     public	bool IsMove	{ set; get; } = false;          
@@ -15,7 +14,10 @@ public class Movement2D : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float fireCooldown = 2f;
     [SerializeField] private Image fireButtonImg;
-    private float lastFireTime = -Mathf.Infinity;       
+    private float lastFireTime = -Mathf.Infinity;
+
+    [Header("Debug")]
+    [SerializeField] private PlayerSO playerSO;
 
     private void Update()
     {
